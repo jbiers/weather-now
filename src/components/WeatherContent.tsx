@@ -1,6 +1,8 @@
+import '../styles/weatherContent.scss'
+
 export function WeatherContent() {
     return (
-        <section className="weather-content">
+        <section className="weatherContent">
 
         </section>
     )
