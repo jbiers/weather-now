@@ -1,3 +1,5 @@
+import { CurrentTime } from './CurrentTime'
+
 import image from '../../public/weather.png'
 
 import '../styles/infoContent.scss'
@@ -10,7 +12,7 @@ export function InfoContent() {
                     Porto Velho,
                 </span>
                 <span className="country">
-                    Brazil
+                    BR
                 </span>
             </div>
 
@@ -26,6 +28,8 @@ export function InfoContent() {
 
                 <span>Thunderstorms</span>
             </div>
+
+            <CurrentTime unixTimestamp={1647615550} />
         </div>
     )
 }

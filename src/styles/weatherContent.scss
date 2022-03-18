@@ -19,27 +19,6 @@ section.weatherContent {
       justify-content: center;
       align-items: center;
       width: 100%;
-  
-  }
-
-  div.infoContent {
-      margin-top: 2rem;
-      flex-direction: column;
-
-      .location {
-          display: flex;
-          margin-bottom: 15px;
-
-          .city {
-            font-size: 30px;
-            margin-right: 5px;
-          }
-    
-          .country {
-              font-size: 20px;
-              align-self: flex-end;
-          }
-      }
   }
 }
 
