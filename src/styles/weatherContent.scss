@@ -19,36 +19,16 @@ section.weatherContent {
       justify-content: center;
       align-items: center;
       width: 100%;
-  }
-
-  div.searchContent {
-
-      .btn {
-        border: none;
-        color: white;
-        background-color: purple;
-        border-radius: 8px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-
-        padding: 14px;
-        transition: filter 0.2s;
-
-        margin-left: 10px;
-
-        &:hover {
-            filter: brightness(0.7);
-            cursor: pointer;
-        }
-      }
+  
   }
 
   div.infoContent {
       margin-top: 2rem;
+      flex-direction: column;
 
       .location {
           display: flex;
+          margin-bottom: 15px;
 
           .city {
             font-size: 30px;

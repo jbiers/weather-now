@@ -1,0 +1,37 @@
+div.infoContent {
+    margin-top: 2rem;
+    flex-direction: column;
+
+    .location {
+        display: flex;
+        margin-bottom: 15px;
+
+        .city {
+          font-size: 30px;
+          margin-right: 5px;
+        }
+  
+        .country {
+            font-size: 20px;
+            align-self: flex-end;
+        }
+    }
+
+    .temperature {
+        font-size: 18px;
+    }
+
+    .currentConditions {
+        display: flex;
+        flex-direction: column;
+
+        img {
+            width: 150px;
+            height: 150px;
+        }
+
+        span {
+            font-size: 20px;
+        }
+    }
+}

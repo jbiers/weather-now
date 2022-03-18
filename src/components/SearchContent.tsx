@@ -1,3 +1,5 @@
+import '../styles/searchContent.scss'
+
 export function SearchContent() {
     return (
         <div className="searchContent">
