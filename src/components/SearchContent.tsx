@@ -6,7 +6,7 @@ export function SearchContent() {
                 type="text"
                 placeholder="Search city">
             </input>
-            <button className="btn">search</button>
+            <button className="btn"></button>
         </div>
     )
 }

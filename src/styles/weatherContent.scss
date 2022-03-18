@@ -10,9 +10,56 @@ section.weatherContent {
   filter: drop-shadow(0px 24px 64px rgba(0, 0, 0, 0.06));
 
   display: flex;
+  flex-direction: column;
+
+  div {
+      margin: 0 auto;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+  }
 
   div.searchContent {
-      margin: 0 auto;
+
+      .btn {
+        border: none;
+        color: white;
+        background-color: purple;
+        border-radius: 8px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+
+        padding: 14px;
+        transition: filter 0.2s;
+
+        margin-left: 10px;
+
+        &:hover {
+            filter: brightness(0.7);
+            cursor: pointer;
+        }
+      }
+  }
+
+  div.infoContent {
+      margin-top: 2rem;
+
+      .location {
+          display: flex;
+
+          .city {
+            font-size: 30px;
+            margin-right: 5px;
+          }
+    
+          .country {
+              font-size: 20px;
+              align-self: flex-end;
+          }
+      }
   }
 }
 
