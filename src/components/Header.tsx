@@ -1,7 +1,9 @@
+import '../styles/header.scss'
+
 export function Header() {
     return (
-        <div className="header">
-            <span>weather.now</span>
-        </div>
+        <header className="header">
+            <div>weather.now</div>
+        </header>
     )
 }
