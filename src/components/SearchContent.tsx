@@ -1,3 +1,5 @@
+import { FaSearch } from 'react-icons/fa'
+
 import '../styles/searchContent.scss'
 
 export function SearchContent() {
@@ -8,7 +10,9 @@ export function SearchContent() {
                 type="text"
                 placeholder="Search city">
             </input>
-            <button className="btn"></button>
+            <button className="btn">
+                <FaSearch />
+            </button>
         </div>
     )
 }

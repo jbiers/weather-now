@@ -4,20 +4,24 @@ import image from '../../public/weather.png'
 
 import '../styles/infoContent.scss'
 
-export function InfoContent() {
+interface infoContentProps {
+    currentWeather: object
+}
+
+export function InfoContent(props: infoContentProps) {
     return (
         <div className="infoContent">
             <div className="location">
                 <span className="city">
-                    Porto Velho,
+                    {props.currentWeather.name},
                 </span>
                 <span className="country">
-                    BR
+                    {props.currentWeather.sys.country}
                 </span>
             </div>
 
             <div className="temperature">
-                19ºC
+                {Math.floor(props.currentWeather.main.temp)}ºC
             </div>
 
             <div className="currentConditions">
@@ -26,10 +30,10 @@ export function InfoContent() {
                     alt="current weather">
                 </img>
 
-                <span>Thunderstorms</span>
+                <span>{props.currentWeather.weather.description}</span>
             </div>
 
-            <CurrentTime unixTimestamp={1647615550} />
+            <CurrentTime unixTimestamp={props.currentWeather.dt} />
         </div>
     )
 }
