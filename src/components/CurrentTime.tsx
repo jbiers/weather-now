@@ -1,28 +1,24 @@
 import { useState, useEffect } from 'react'
 
 interface currentTimeProps {
-    unixTimestamp: number
+    timeNow: number
 }
 
 export function CurrentTime(props: currentTimeProps) {
-    const [timeNow, setTimeNow] = useState(new Date(props.unixTimestamp * 1000));
+    const [timeNow, setTimeNow] = useState(new Date(props.timeNow));
 
     useEffect(() => {
-        setTimeout(
-            () => {
-                setTimeNow(new Date(props.unixTimestamp + 1000))
-            }, 1000
-        )
-    }, [timeNow]);
+        setTimeNow(new Date(props.timeNow))
+    }, [props.timeNow])
 
     return (
         <div>
-            {timeNow.getHours() < 10 ? 0 : ''}{timeNow.getHours()}:
-            {timeNow.getMinutes() < 10 ? 0 : ''}{timeNow.getMinutes()}:
-            {timeNow.getSeconds() < 10 ? 0 : ''}{timeNow.getSeconds()}
+            {timeNow.getDate() < 10 ? 0 : ''}{timeNow.getDate()}/
+            {(timeNow.getMonth() + 1) < 10 ? 0 : ''}{(timeNow.getMonth() + 1)}/
+            {timeNow.getFullYear()}
         </div>
     )
 }
 
-// the changing state will be the unix time stamp
-// it will probably live in the parent
+
+// TAKE TIMEZONE INTO CONSIDERATION

@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 import { CurrentTime } from './CurrentTime'
 
 import image from '../../public/weather.png'
@@ -70,6 +72,7 @@ interface infoContentProps {
 
 
 export function InfoContent(props: infoContentProps) {
+
     return (
         <div className="infoContent">
             <div className="location">
@@ -95,9 +98,7 @@ export function InfoContent(props: infoContentProps) {
                 <span>{props.currentWeather.weather.description}</span>
             </div>
 
-            <CurrentTime unixTimestamp={props.currentWeather.dt} />
+            <CurrentTime timeNow={props.currentWeather.dt * 1000} />
         </div>
     )
 }
-
-// location, temperature, image, currentState, time
