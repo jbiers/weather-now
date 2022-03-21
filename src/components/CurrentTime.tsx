@@ -9,7 +9,9 @@ export function CurrentTime(props: currentTimeProps) {
 
     useEffect(() => {
         setTimeout(
-            () => setTimeNow(new Date(timeNow.getTime() + 1000)), 1000
+            () => {
+                setTimeNow(new Date(props.unixTimestamp + 1000))
+            }, 1000
         )
     }, [timeNow]);
 
