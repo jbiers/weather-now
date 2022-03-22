@@ -68,6 +68,7 @@ export interface currentWeatherObject {
 
 interface infoContentProps {
     currentWeather: currentWeatherObject;
+    currentIcon: string
 }
 
 
@@ -91,7 +92,7 @@ export function InfoContent(props: infoContentProps) {
 
             <div className="currentConditions">
                 <img
-                    src={image}
+                    src={props.currentIcon}
                     alt="current weather">
                 </img>
 

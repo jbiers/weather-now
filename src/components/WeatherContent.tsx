@@ -63,41 +63,31 @@ const emptyWeather = (): currentWeatherObject => ({
 const api = {
     key: key,
     base: 'https://api.openweathermap.org/data/2.5/',
-    city: 'porto velho'
+    city: 'boston'
 }
 
 export function WeatherContent() {
     const [currentWeather, setCurrentWeather] = useState<currentWeatherObject>(emptyWeather)
-    //const [currentIcon, setCurrentIcon] = useState()
+    const [currentIcon, setCurrentIcon] = useState<string>('')
 
-    const url: string = `${api.base}weather?q=${api.city}&units=metric&appid=${api.key}`
-    let imgURL: string = ''
+    const URL: string = `${api.base}weather?q=${api.city}&units=metric&appid=${api.key}`
 
     useEffect(() => {
-        fetch(url)
+        fetch(URL)
             .then(response => response.json())
-            .then(data => setCurrentWeather(data))
+            .then(data => {
+                setCurrentWeather(data)
+            })
     }, [])
 
     useEffect(() => {
-        fetch(`http://openweathermap.org/img/w/${currentWeather.weather[0].icon}.png`)
-            .then(response => response.blob())
-            .then(blob => {
-                URL.revokeObjectURL(imgURL)
-                console.log(blob)
-                imgURL = URL.createObjectURL(blob)
-                console.log(imgURL)
-            })
-
-    })
-
+        setCurrentIcon(`http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`)
+    }, [currentWeather])
 
     return (
         <section className="weatherContent">
-            <img src={imgURL}>
-            </img>
             <SearchContent />
-            <InfoContent currentWeather={currentWeather} />
+            <InfoContent currentWeather={currentWeather} currentIcon={currentIcon} />
         </section>
     )
 }

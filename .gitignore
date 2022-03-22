@@ -1,2 +1,2 @@
 node_modules
-./src/components/api_key.tsx
+api_key.tsx
