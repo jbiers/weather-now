@@ -98,7 +98,7 @@ export function InfoContent(props: infoContentProps) {
                 <span>{props.currentWeather.weather.description}</span>
             </div>
 
-            <CurrentTime timeNow={props.currentWeather.dt * 1000} />
+            <CurrentTime timeNow={props.currentWeather.dt * 1000} timeZone={props.currentWeather.timezone * 1000} />
         </div>
     )
 }

@@ -63,7 +63,7 @@ export function WeatherContent() {
     const [currentWeather, setCurrentWeather] = useState<currentWeatherObject>(emptyWeather)
 
     useEffect(() => {
-        fetch('https://api.openweathermap.org/data/2.5/weather?q=ariquemes&units=metric&appid=3572f70919842b0933f0c7b1037ac03d')
+        fetch('https://api.openweathermap.org/data/2.5/weather?q=anadyr&units=metric&appid=3572f70919842b0933f0c7b1037ac03d')
             .then(response => response.json())
             .then(data => setCurrentWeather(data))
     }, [])

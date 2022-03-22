@@ -2,13 +2,19 @@ import { useState, useEffect } from 'react'
 
 interface currentTimeProps {
     timeNow: number
+    timeZone: number
 }
 
 export function CurrentTime(props: currentTimeProps) {
-    const [timeNow, setTimeNow] = useState(new Date(props.timeNow));
+    const [timeNow, setTimeNow] = useState(new Date(props.timeNow + props.timeZone));
 
     useEffect(() => {
-        setTimeNow(new Date(props.timeNow))
+        const d = new Date()
+        const localTime = d.getTime()
+        const localOffset = d.getTimezoneOffset() * 60000
+        const utc = localTime + localOffset
+
+        setTimeNow(new Date(utc + props.timeZone))
     }, [props.timeNow])
 
     return (
