@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 import { SearchContent } from './SearchContent'
 import { InfoContent } from './InfoContent'
+import { key } from './api_key'
 
 import '../styles/weatherContent.scss'
 
@@ -57,13 +58,21 @@ const emptyWeather = (): currentWeatherObject => ({
     id: 0,
     name: '',
     cod: 0
-});
+})
+
+const api = {
+    key: key,
+    base: 'https://api.openweathermap.org/data/2.5/',
+    city: 'boston'
+}
 
 export function WeatherContent() {
     const [currentWeather, setCurrentWeather] = useState<currentWeatherObject>(emptyWeather)
 
+    const url = `${api.base}weather?q=${api.city}&units=metric&appid=${api.key}`
+
     useEffect(() => {
-        fetch('https://api.openweathermap.org/data/2.5/weather?q=anadyr&units=metric&appid=3572f70919842b0933f0c7b1037ac03d')
+        fetch(url)
             .then(response => response.json())
             .then(data => setCurrentWeather(data))
     }, [])
