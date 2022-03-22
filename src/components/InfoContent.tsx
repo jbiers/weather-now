@@ -51,7 +51,7 @@ interface Sys {
 
 export interface currentWeatherObject {
     coord: Coord;
-    weather: Weather;
+    weather: Weather[];
     base: string;
     main: Main;
     visibility: number;
@@ -95,7 +95,7 @@ export function InfoContent(props: infoContentProps) {
                     alt="current weather">
                 </img>
 
-                <span>{props.currentWeather.weather.description}</span>
+                <span>{props.currentWeather.weather[0].main}</span>
             </div>
 
             <CurrentTime timeNow={props.currentWeather.dt * 1000} timeZone={props.currentWeather.timezone * 1000} />
