@@ -1,3 +1,10 @@
+/*
+    -- handle invalid searches
+    -- download all images to avoid trouble (?)
+    -- get user location as initial city
+    -- make page prettier
+*/
+
 import { useEffect, useState } from 'react'
 
 import { SearchContent } from './SearchContent'
@@ -51,6 +58,7 @@ const emptyWeather = (): currentWeatherObject => ({
         sunrise: 0,
         sunset: 0
     },
+
     base: '',
     visibility: 0,
     dt: 0,
@@ -76,12 +84,11 @@ export function WeatherContent() {
     useEffect(() => {
         fetch(URL)
             .then(response => response.json())
-            .then(data => {
-                setCurrentWeather(data)
-            })
+            .then(data => setCurrentWeather(data))
     }, [currentCity])
 
     useEffect(() => {
+        console.log(currentWeather)
         setCurrentIcon(`http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`)
     }, [currentWeather])
 
