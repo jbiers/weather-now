@@ -1,8 +1,4 @@
-import { useState, useEffect } from 'react';
-
 import { CurrentTime } from './CurrentTime'
-
-import image from '../../public/weather.png'
 
 import '../styles/infoContent.scss'
 

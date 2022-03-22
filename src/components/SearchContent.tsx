@@ -2,7 +2,18 @@ import { FaSearch } from 'react-icons/fa'
 
 import '../styles/searchContent.scss'
 
-export function SearchContent() {
+interface searchContentProps {
+    currentCity: string
+    setCurrentCity: Function
+}
+
+export function SearchContent(props: searchContentProps) {
+    let getInput = () => {
+        const name = document.getElementsByTagName('input')[0].value
+        props.setCurrentCity(name)
+    }
+
+
     return (
         <div className="searchContent">
             <input
@@ -10,7 +21,7 @@ export function SearchContent() {
                 type="text"
                 placeholder="Search city">
             </input>
-            <button className="btn">
+            <button className="btn" onClick={getInput}>
                 <FaSearch />
             </button>
         </div>
