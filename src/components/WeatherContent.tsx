@@ -83,6 +83,7 @@ export function WeatherContent() {
         fetch(`http://openweathermap.org/img/w/${currentWeather.weather[0].icon}.png`)
             .then(response => response.blob())
             .then(blob => {
+                URL.revokeObjectURL(imgURL)
                 console.log(blob)
                 imgURL = URL.createObjectURL(blob)
                 console.log(imgURL)
