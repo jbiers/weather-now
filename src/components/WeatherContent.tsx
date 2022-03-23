@@ -1,6 +1,5 @@
 /*
     -- handle invalid searches
-    -- download all images to avoid trouble (?)
     -- get user location as initial city
     -- make page prettier
 */
@@ -68,11 +67,12 @@ const emptyWeather = (): currentWeatherObject => ({
     cod: 0
 })
 
+
 const api = {
     key: key,
     base: 'https://api.openweathermap.org/data/2.5/',
-    city: 'indianapolis'
 }
+
 
 export function WeatherContent() {
     const [currentWeather, setCurrentWeather] = useState<currentWeatherObject>(emptyWeather)
@@ -88,8 +88,8 @@ export function WeatherContent() {
     }, [currentCity])
 
     useEffect(() => {
-        console.log(currentWeather)
         setCurrentIcon(`http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`)
+        console.log(currentWeather)
     }, [currentWeather])
 
     return (

@@ -10,6 +10,7 @@ interface searchContentProps {
 export function SearchContent(props: searchContentProps) {
     let getInput = () => {
         const name = document.getElementsByTagName('input')[0].value
+        document.getElementsByTagName('input')[0].value = ''
 
         if (name !== '') {
             props.setCurrentCity(name)
@@ -30,5 +31,3 @@ export function SearchContent(props: searchContentProps) {
         </div>
     )
 }
-
-/** magnifying glass instead of search */

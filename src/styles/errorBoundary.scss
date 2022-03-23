@@ -1,0 +1,33 @@
+.error {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    span.errorMessage {
+        font-size: 30px;
+    }
+
+    img {
+        width: 11rem;
+    }
+
+    .btn {
+        border: none;
+        color: white;
+        background-color: purple;
+        border-radius: 8px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+    
+        padding: 14px;
+        transition: filter 0.2s;
+    
+        margin-left: 10px;
+        &:hover {
+            filter: brightness(0.7);
+            cursor: pointer;
+        }
+    }
+}
