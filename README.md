@@ -2,6 +2,8 @@
 
 Find what are the weather conditions anywhere in the world.
 
+![Screenshot from 2022-03-23 09-57-39](https://user-images.githubusercontent.com/85142222/159718914-13ea1086-02b6-4624-ac80-b71a106bb1be.png)
+
 ## Installation
 You can use npm or yarn to install the dependencies
 
